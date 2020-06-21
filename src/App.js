@@ -7,20 +7,28 @@ import {TransactionHistory} from './components/TransactionHistory'
 import {AddTransaction} from './components/AddTransaction'
 
 
+
+import { GlobalProvider } from './Context/GlobalState';
+
+
 function App() {
   return (
-    <div>
-      <Header />
-    
-      <div className= 'container'>
+    <GlobalProvider>
+      <div className='container'>
+        
+        <Header />
+
+
         <Balance />
         <IncomeExpense />
         <TransactionHistory />
         <AddTransaction />
-
-
       </div>
-    </div>
+    </GlobalProvider>
+
+
+
+    
   );
 }
 
